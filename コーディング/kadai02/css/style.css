@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.flex-box1 {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.flex-box1 div {
+    width: 30%;       
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: blue;
+}
+
+.flex-box2 {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 8px;
+}
+/* flex-wrapで横並びの子要素を折り返した場合、
+水平方向の余白は子要素の幅とjustify-contentで調整して、
+垂直方向の余白だけrow-gapを使う！ */
+
+.flex-box2 div {
+    width: 30%;
+    height: auto;
+    aspect-ratio: 1 / 1;           
+    background-color: red;
+}
+
+header {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+li::before {  
+    content: '';
+    height: 24px;
+    border-left: 2px solid #9b9b9b;
+    margin: 32px;
+}
+
+li:first-child::before {
+    border-left: none; 
+}
+
+@media screen and (max-width: 767px) {
+header {
+    display: block;
+    padding: 8px;
+}
+
+ul {
+    display: block;
+}
+
+li {
+    border-bottom: 2px solid #9b9b9b;
+}
+
+li::before {
+    border-left: none;
+    margin: 16px 0;
+}
+
+}
+
+
+
